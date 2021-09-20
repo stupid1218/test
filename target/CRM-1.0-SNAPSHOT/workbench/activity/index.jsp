@@ -139,10 +139,10 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 						/*
 						*
 						* $("#activityPage").bs_pagination('getOption', 'currentPage'):
-						* 		操作后停留在当前页
+						* 		表示操作后停留在当前页
 						*
 						* $("#activityPage").bs_pagination('getOption', 'rowsPerPage')
-						* 		操作后维持已经设置好的每页展现的记录数
+						* 		表示操作后维持已经设置好的每页展现的记录数
 						*
 						* 这两个参数不需要我们进行任何的修改操作
 						* 	直接使用即可
@@ -513,14 +513,12 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 
 			url : "workbench/activity/pageList.do",
 			data : {
-
 				"pageNo" : pageNo,
 				"pageSize" : pageSize,
 				"name" : $.trim($("#search-name").val()),
 				"owner" : $.trim($("#search-owner").val()),
 				"startDate" : $.trim($("#search-startDate").val()),
 				"endDate" : $.trim($("#search-endDate").val())
-
 			},
 			type : "get",
 			dataType : "json",
@@ -576,7 +574,7 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 
 					//该回调函数时在，点击分页组件的时候触发的
 					onChangePage : function(event, data){
-						pageList(data.currentPage , data.rowsPerPage);
+					    pageList(data.currentPage , data.rowsPerPage);
 					}
 				});
 
